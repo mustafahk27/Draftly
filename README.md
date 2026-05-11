@@ -1,4 +1,4 @@
-# LIGMA — Live Interactive Group Meeting App
+# Draftly — Live Interactive Group Meeting App
 
 > Real-time collaborative canvas with AI-powered note classification, structured export, and role-based access control.
 > Built for hackathon by **Team Raptors**.
@@ -24,7 +24,7 @@
 
 ## Overview
 
-LIGMA is a multi-user collaborative whiteboard designed for meeting teams. Participants join a named **room**, drop sticky notes and drawings onto a shared canvas, and get an AI-generated PDF summary at the end — either a prose narrative or a structured brief (Decisions / Action Items / Open Questions / References).
+Draftly is a multi-user collaborative whiteboard designed for meeting teams. Participants join a named **room**, drop sticky notes and drawings onto a shared canvas, and get an AI-generated PDF summary at the end — either a prose narrative or a structured brief (Decisions / Action Items / Open Questions / References).
 
 Key capabilities:
 
@@ -90,7 +90,7 @@ Key capabilities:
 
 ### CRDT — Why Yjs
 
-LIGMA uses **Yjs** (YATA algorithm). Unlike Operational Transformation, CRDTs need no central serialization — every client merges updates deterministically. The server acts as a **relay and persistent store**, not an arbiter of order.
+Draftly uses **Yjs** (YATA algorithm). Unlike Operational Transformation, CRDTs need no central serialization — every client merges updates deterministically. The server acts as a **relay and persistent store**, not an arbiter of order.
 
 - Canvas nodes → `Y.Map` keyed by node ID inside the root `nodes` map
 - Text content → `Y.Text` (sequence CRDT, handles concurrent character inserts)
@@ -116,7 +116,7 @@ Client                          Server
   |◀─ { type:'replay', … } ──────|  base state + missed deltas (animated)
 ```
 
-Reconnection uses exponential backoff `[1s, 2s, 4s, 8s, 16s, 30s]`. The client persists `ligma:lastSeq:<roomId>` in `localStorage`; the server computes the minimal diff via `Y.encodeStateVectorFromUpdate` / `Y.diffUpdate`.
+Reconnection uses exponential backoff `[1s, 2s, 4s, 8s, 16s, 30s]`. The client persists `draftly:lastSeq:<roomId>` in `localStorage`; the server computes the minimal diff via `Y.encodeStateVectorFromUpdate` / `Y.diffUpdate`.
 
 ### RBAC Enforcement
 
@@ -326,10 +326,10 @@ NEXT_PUBLIC_WS_URL=ws://localhost:3001   # optional; derived from API_URL if omi
 ### 1. Database
 
 ```bash
-createdb ligma
-psql ligma < server/migrations/001_init.sql
-psql ligma < server/migrations/002_canvas_nodes.sql
-psql ligma < server/migrations/003_auth.sql
+createdb draftly
+psql draftly < server/migrations/001_init.sql
+psql draftly < server/migrations/002_canvas_nodes.sql
+psql draftly < server/migrations/003_auth.sql
 ```
 
 ### 2. Server
@@ -387,7 +387,7 @@ Deploy `web/` as a **Next.js** app on Vercel or as a Render Web Service:
 | Build command | `cd web && npm install && npm run build` |
 | Start command | `cd web && npm start` |
 
-Set `NEXT_PUBLIC_API_URL` to the Render server's public URL (e.g. `https://ligma-server.onrender.com`).
+Set `NEXT_PUBLIC_API_URL` to the Render server's public URL (e.g. `https://draftly-server.onrender.com`).
 
 ### WebSocket on Render
 
@@ -398,7 +398,7 @@ Render supports WebSockets on standard Web Services with no additional configura
 ## File Tree
 
 ```
-LIGMA/
+Draftly/
 ├── server/
 │   ├── migrations/
 │   │   ├── 001_init.sql

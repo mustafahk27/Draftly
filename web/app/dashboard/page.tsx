@@ -131,7 +131,7 @@ export default function DashboardPage() {
           className="text-lg font-bold tracking-widest uppercase font-mono text-[var(--text)]"
           style={{ letterSpacing: '0.18em' }}
         >
-          LIGMA
+          Draftly
         </span>
 
         <div className="flex items-center gap-3">

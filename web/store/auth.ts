@@ -23,8 +23,8 @@ export const useAuthStore = create<AuthStore>((set) => ({
 
   hydrate: () => {
     if (typeof window === 'undefined') return;
-    const token = localStorage.getItem('ligma_token');
-    const userStr = localStorage.getItem('ligma_user');
+    const token = localStorage.getItem('draftly_token');
+    const userStr = localStorage.getItem('draftly_user');
     let user: User | null = null;
     try {
       user = userStr ? JSON.parse(userStr) : null;
@@ -36,16 +36,16 @@ export const useAuthStore = create<AuthStore>((set) => ({
 
   setAuth: (user, token) => {
     if (typeof window !== 'undefined') {
-      localStorage.setItem('ligma_token', token);
-      localStorage.setItem('ligma_user', JSON.stringify(user));
+      localStorage.setItem('draftly_token', token);
+      localStorage.setItem('draftly_user', JSON.stringify(user));
     }
     set({ user, token });
   },
 
   clearAuth: () => {
     if (typeof window !== 'undefined') {
-      localStorage.removeItem('ligma_token');
-      localStorage.removeItem('ligma_user');
+      localStorage.removeItem('draftly_token');
+      localStorage.removeItem('draftly_user');
     }
     set({ user: null, token: null });
   },

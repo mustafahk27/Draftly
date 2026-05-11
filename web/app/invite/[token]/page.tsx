@@ -78,7 +78,7 @@ export default function InvitePage() {
         className="mb-8 text-xl font-bold tracking-widest uppercase font-mono text-[var(--text-2)] hover:text-[var(--text)] transition-colors"
         style={{ letterSpacing: '0.2em' }}
       >
-        LIGMA
+        Draftly
       </Link>
 
       {/* Card */}

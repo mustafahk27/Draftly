@@ -264,8 +264,8 @@ export default function RoomPage() {
       setRejection(detail?.reason ?? 'Update rejected');
       setTimeout(() => setRejection(null), 3000);
     }
-    window.addEventListener('ligma:rejected', onRejected as EventListener);
-    return () => window.removeEventListener('ligma:rejected', onRejected as EventListener);
+    window.addEventListener('draftly:rejected', onRejected as EventListener);
+    return () => window.removeEventListener('draftly:rejected', onRejected as EventListener);
   }, []);
 
   /* ── Tool keyboard shortcuts ────────────────────────────────────────── */
@@ -428,7 +428,7 @@ export default function RoomPage() {
           style={{ letterSpacing: '0.15em' }}
           title="Back to dashboard"
         >
-          LIGMA
+          Draftly
         </Link>
 
         <span className="text-[var(--border-2)] text-sm flex-shrink-0">/</span>

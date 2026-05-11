@@ -1,4 +1,4 @@
-# LIGMA — Implementation Plan
+# Draftly — Implementation Plan
 
 > A feature-by-feature build guide for the DevDay '26 Hackathon.
 > Read this top to bottom. Do not skip features. Each one builds on the last.
@@ -41,7 +41,7 @@
 ### Step 1: Create the repo structure
 
 ```
-ligma/
+draftly/
 ├── web/              # Next.js frontend
 ├── server/           # Node.js backend (Fastify + ws)
 ├── shared/           # Shared TypeScript types

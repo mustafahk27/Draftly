@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'LIGMA — Collaborative Canvas',
+  title: 'Draftly — Collaborative Canvas',
   description: 'Real-time collaborative canvas with AI-powered task extraction.',
 };
 

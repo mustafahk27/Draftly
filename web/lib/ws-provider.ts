@@ -121,7 +121,7 @@ class WsProvider {
 
   // ── Persistent reconnect state ──────────────────────────────────────────────
   private get lastSeqKey(): string {
-    return `ligma:lastSeq:${this.roomId}`;
+    return `draftly:lastSeq:${this.roomId}`;
   }
 
   private get storedLastSeq(): number {
@@ -335,7 +335,7 @@ class WsProvider {
         // (eventually) revert the local optimistic update for msg.nodeId.
         if (typeof window !== 'undefined') {
           window.dispatchEvent(
-            new CustomEvent('ligma:rejected', {
+            new CustomEvent('draftly:rejected', {
               detail: { reason: msg.reason, nodeId: msg.nodeId },
             }),
           );

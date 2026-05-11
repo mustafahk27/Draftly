@@ -1,4 +1,4 @@
-# LIGMA — Change Log
+# Draftly — Change Log
 
 > Session: WebSocket & Real-Time Sync (Features 1, 2, 7, 8)
 > Date: 2026-04-27
@@ -135,7 +135,7 @@ Custom WebSocket provider class with full reconnect and Yjs integration.
   - **Incoming `{ type: 'awareness' }`**: decodes with `y-protocols/awareness`
   - **Incoming `{ type: 'rejected' }`**: logs warning (RBAC hook for F9)
 - **Exponential backoff**: delays `[1s, 2s, 4s, 8s, 16s, 30s]`, capped at 30s
-- **`lastSeq` persistence**: stored in `localStorage` under key `ligma:lastSeq:<roomId>`; survives page refresh
+- **`lastSeq` persistence**: stored in `localStorage` under key `draftly:lastSeq:<roomId>`; survives page refresh
 - **Exports**:
   - `wsProvider` — singleton instance
   - `awareness` — shared `Awareness` instance (used by `Cursors.tsx` in F3)

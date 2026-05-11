@@ -49,7 +49,7 @@ export default function LoginPage() {
             className="text-2xl font-bold tracking-widest uppercase font-mono text-[var(--text)]"
             style={{ letterSpacing: '0.2em' }}
           >
-            LIGMA
+            Draftly
           </span>
           <p className="mt-1 text-xs text-[var(--text-3)] font-mono tracking-wider uppercase">
             Collaborative Canvas
