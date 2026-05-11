@@ -1,6 +1,6 @@
 # Draftly — Implementation Plan
 
-> A feature-by-feature build guide for the DevDay '26 Hackathon.
+> A feature-by-feature build guide.
 > Read this top to bottom. Do not skip features. Each one builds on the last.
 
 ---

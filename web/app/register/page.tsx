@@ -182,7 +182,7 @@ export default function RegisterPage() {
         </div>
 
         <p className="mt-auto pt-10 text-xs text-[var(--text-3)] text-center">
-          DevDay &apos;26 · Invite-only access
+          Invite-only access
         </p>
       </div>
 
