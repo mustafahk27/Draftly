@@ -2,6 +2,7 @@
 
 import { useState, useEffect, FormEvent } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useAuthStore } from '@/store/auth';
 import { auth } from '@/lib/api';
@@ -57,16 +58,14 @@ export default function RegisterPage() {
       {/* ── Left: Form ──────────────────────────────────────────────── */}
       <div className="flex flex-col justify-center w-full max-w-[480px] min-h-screen px-10 py-12 bg-[var(--bg)] border-r border-[var(--border)]">
         {/* Logo */}
-        <div className="mb-10 animate-fade-in">
-          <span
-            className="text-2xl font-bold tracking-widest uppercase font-mono text-[var(--text)]"
-            style={{ letterSpacing: '0.2em' }}
-          >
-            LIGMA
-          </span>
-          <p className="mt-1 text-xs text-[var(--text-3)] font-mono tracking-wider uppercase">
-            Collaborative Canvas
-          </p>
+        <div className="mb-10 animate-fade-in flex items-center gap-3">
+          <Image src="/knit_logo.png" alt="Knit" width={44} height={44}
+            style={{ filter: 'drop-shadow(0 2px 8px rgba(232,137,42,0.3))' }}
+          />
+          <div>
+            <span className="text-xl font-bold text-[var(--text)] tracking-wider">Knit</span>
+            <p className="text-[10px] text-[var(--text-3)] font-mono tracking-widest uppercase">Collaborative Canvas</p>
+          </div>
         </div>
 
         <div className="animate-fade-in" style={{ animationDelay: '0.05s' }}>
@@ -182,7 +181,7 @@ export default function RegisterPage() {
         </div>
 
         <p className="mt-auto pt-10 text-xs text-[var(--text-3)] text-center">
-          DevDay &apos;26 · Invite-only access
+          Invite-only access
         </p>
       </div>
 

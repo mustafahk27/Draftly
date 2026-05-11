@@ -358,7 +358,7 @@ export default function RoomPage() {
           className="text-sm font-bold tracking-widest uppercase font-mono text-[var(--text-2)] hover:text-[var(--text)] transition-colors flex-shrink-0"
           style={{ letterSpacing: '0.15em' }}
         >
-          LIGMA
+          Knit
         </Link>
 
         <span className="text-[var(--border-2)] text-sm flex-shrink-0">/</span>
@@ -447,13 +447,12 @@ export default function RoomPage() {
         <div className="flex items-center gap-2 mr-4 bg-[var(--surface)] border border-[var(--border)] rounded-lg p-1 px-2">
           <button
             onClick={() => setHeatmapVisible(!heatmapVisible)}
-            className={`text-xs font-semibold px-2 py-1 rounded transition-colors ${
-              heatmapVisible ? 'bg-[var(--accent)] text-white' : 'text-[var(--text-3)] hover:text-[var(--text)]'
-            }`}
+            className={`text-xs font-semibold px-2 py-1 rounded transition-colors ${heatmapVisible ? 'bg-[var(--accent)] text-white' : 'text-[var(--text-3)] hover:text-[var(--text)]'
+              }`}
           >
             🔥 Heatmap {heatmapVisible ? 'On' : 'Off'}
           </button>
-          
+
           {heatmapVisible && (
             <select
               value={heatmapFilter}
